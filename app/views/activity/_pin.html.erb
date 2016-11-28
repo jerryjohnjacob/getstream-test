@@ -1,0 +1,11 @@
+<article class="pin">
+    <figure>
+        <div class="pin-image-holder">
+            <%= image_tag activity['object'].image, class: "pin-image" %>
+        </div>
+    </figure>
+    <%= render partial: "pins/pin_form", locals: {item: activity['object']} %>
+    <footer class="pin-attribution">
+        by <a href="{{ URL::route('profile', $item->user->username) }}"><%= activity['actor'].email %></a><% if(activity['time']) %> <%= time_ago_in_words activity['time'] %> ago <% end %>
+    </footer>
+</article>

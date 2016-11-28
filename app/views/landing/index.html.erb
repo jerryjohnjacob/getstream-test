@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="container-pins">
+        <% for item in @items %>
+            <%= render partial: "items/item", locals: {item: item} %>
+        <% end %>
+    </div>
+</div>
